@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Calculator</title>
+</head>
+<body>
+	<div id="buttons" style="position:absolute; top:30px; left:50px; z-index:2">
+	</div>
+	<div id='screen'  style="position:absolute; top:50px; left:80px; z-index:2">0.
+	</div>
+	<div id="btn" style="position:absolute; top:130px; left:100px; z-index:2">
+	<ul>
+	<li>
+		<button type="button" onclick="buttoncall(7)">7</button>
+		<button type="button" onclick="buttoncall(8)">8</button>
+		<button type="button" onclick="buttoncall(9)">9</button>
+		<button type="button" onclick="buttoncall(10)">*</button>
+	</li>
+	<li>
+		<button type="button" onclick="buttoncall(4)">4</button>
+		<button type="button" onclick="buttoncall(5)">5</button>
+		<button type="button" onclick="buttoncall(6)">6</button>
+		<button type="button" onclick="buttoncall(11)">-</button>
+	</li>
+	<li>
+	<button type="button" onclick="buttoncall(1)">1</button>
+	<button type="button" onclick="buttoncall(2)">2</button>
+	<button type="button" onclick="buttoncall(3)">3</button>
+	<button type="button" onclick="buttoncall(12)">.</button>
+	
+	</li>
+	<li>
+	<button type="button" onclick="buttoncall(13)">c</button>
+	<button type="button" onclick="buttoncall(14)">/</button>
+	<button type="button" onclick="buttoncall(15)">+</button>
+	<button type="button" onclick="buttoncall(16)">=</button>
+	
+	</li>
+	</ul>
+	<div>
+	
+
+	<style>
+		
+		
+		div[id="buttons"]{
+			border-radius: 10px;
+    		border: 2px solid #0000ff;
+    		padding: 20px; 
+    		width:250px;
+    		height:325px;
+    		background: rgba(0,0,255,0.5);
+		}
+		div[id="screen"]{
+			 border-radius: 10px;
+    		 border: 2px solid #0000ff;
+    		 padding: 20px; 
+    		 width:200px;
+    		 height:30px;
+    		 text-align: right;
+    		 color: green;
+    		 font-size: 40px;
+    		 background:rgb(255,255,255);}
+		body{
+			text-align: centre;
+		}
+		canvas{
+			padding-left: 20px;
+		}
+		ul{
+			list-style:none;
+			text-align: right;
+			}
+		button{
+			border-radius: 10px;
+			border: 0px;
+			background: rgba(0,0,255,0.5);
+			padding: 10px;
+			color: white;
+			font-size: 30px;
+
+		}
+		</style>
+		<script>
+			var n=1;
+			function buttoncall(obj){
+					var c=obj;
+					
+										
+						var val=''+document.getElementById("screen").innerHTML;
+						if(val==0. && c<10)
+						{
+							document.getElementById("screen").innerHTML=c;
+						}
+					
+						if(val!=0. && c<10)
+						{
+							
+							document.getElementById("screen").innerHTML=val+c;
+						}
+						if(val!=0. && c>=10)
+						{
+							
+							if(c==10)
+								document.getElementById("screen").innerHTML=val+"*";
+							if(c==11)
+								document.getElementById("screen").innerHTML=val+"-";
+							if(c==12)
+								document.getElementById("screen").innerHTML=val+".";
+							if(c==13)
+								document.getElementById("screen").innerHTML="0.";
+							if(c==14)
+								document.getElementById("screen").innerHTML=val+"/";
+							if(c==15)
+								document.getElementById("screen").innerHTML=val+"+";
+							if(c==16)
+								{
+									document.getElementById("screen").innerHTML=eval(val);
+								}
+						}
+				
+			}
+		</script>
+</body>
+</html>
